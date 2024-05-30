@@ -6,55 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "BalanceSet",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "Transfer",
-				"type": "event"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -136,7 +87,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/msgsenderadddress.sol": "ERC20"
+			"contracts/constructor.sol": "ERC20"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -150,12 +101,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/msgsenderadddress.sol": {
-			"keccak256": "0xae119ebcef591ff7c69a97b96458c89801bd5aba03711e4c14deb57f01267d0b",
+		"contracts/constructor.sol": {
+			"keccak256": "0x800446d0b1dbb74472eb086e54bb5c8955a7048abf5d91fe394c7e139bc07a62",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e0b744a5f4d5255c81d70bce474616cbb9f3bfc1efbec8927be9036903e430ca",
-				"dweb:/ipfs/QmQuGHHmoZYjc2mEiWeGzEzZtBXJYUdWwcGWFLMjCDup6u"
+				"bzz-raw://6cf329cbd2a10e0fd8a60bbd6b103f0bd311fd9b1d236f82a5f04bdbca7534ad",
+				"dweb:/ipfs/QmYo6oGs9XAFRUWMjsXH8t3WUKDGL1zoNDKMD2JFkquQ6c"
 			]
 		}
 	},

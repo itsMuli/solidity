@@ -8,72 +8,44 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "key",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "key2",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
 					}
 				],
-				"name": "getValue",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "myMapping",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "key",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "key2",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
-					}
-				],
-				"name": "setMapping",
-				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					}
+				],
+				"name": "notFive",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -90,7 +62,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Mapping.sol": "ExampleContract"
+			"contracts/requre.sol": "ExampleContract"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -104,12 +76,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Mapping.sol": {
-			"keccak256": "0x7ca0ab7d41b23b0c445158dc7088f34901f2cfa345b0e89973b6e912fc103de2",
-			"license": "GPL-3.0",
+		"contracts/requre.sol": {
+			"keccak256": "0x86e8f5ee734f53306afb2eb8ace7e6d513b6a5844b595f8b46216a558c3bf17f",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://9eba5e923c5b7b3ad7ab208e6ef11a3b521cfc97094485204d81d05445c7cd7c",
-				"dweb:/ipfs/QmateKmccqycVeCN7b1wQU6o1Wrfq8zh6nRS87g5ZBw2V6"
+				"bzz-raw://97466817395fbec6fd7abcb8986c072504ba1f4b1d231e50c3f82303d9797c68",
+				"dweb:/ipfs/QmP8uswhXgUNvFamRkrG4A1vwRB4MZVh6mUvE6N9KiXGFx"
 			]
 		}
 	},
