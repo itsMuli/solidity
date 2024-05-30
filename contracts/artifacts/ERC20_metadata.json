@@ -6,6 +6,55 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "BalanceSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -59,11 +108,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
 						"name": "receiver",
 						"type": "address"
 					},
@@ -73,27 +117,9 @@
 						"type": "uint256"
 					}
 				],
-				"name": "transferTokensBetweenAddresses",
+				"name": "transfer",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "whoami",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -110,7 +136,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/msgsenderadddress.sol": "ERC20Token"
+			"contracts/msgsenderadddress.sol": "ERC20"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -125,11 +151,11 @@
 	},
 	"sources": {
 		"contracts/msgsenderadddress.sol": {
-			"keccak256": "0x3a983fe025d14658ef380d23f0b4c131405d739233b373bfc8bab80ba038558d",
-			"license": "GPL-3.0",
+			"keccak256": "0xae119ebcef591ff7c69a97b96458c89801bd5aba03711e4c14deb57f01267d0b",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://ac8c48faf98cb0a263e19adb7e1c72b97300ceaf6f589e15bfa4e10f48c2401b",
-				"dweb:/ipfs/QmZzcNcK8vsP3nCR8492uhQ5SR8PpxU5MALBpVgU4SF43Y"
+				"bzz-raw://e0b744a5f4d5255c81d70bce474616cbb9f3bfc1efbec8927be9036903e430ca",
+				"dweb:/ipfs/QmQuGHHmoZYjc2mEiWeGzEzZtBXJYUdWwcGWFLMjCDup6u"
 			]
 		}
 	},
