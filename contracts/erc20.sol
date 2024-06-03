@@ -1,62 +1,58 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >0.8.0;
-contract ERC20 {
-    string public name;
-    string public symbol;
+// Compatible with OpenZeppelin Contracts ^5.0.0
+pragma solidity ^0.8.20;
 
-    mapping(address => uint256) public balanceOf;
-    address public owner;
-    uint8 public decimals;
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20FlashMint.sol";
 
-    uint256 public totalSupply;
+contract MyToken is ERC20, ERC20Burnable, ERC20Pausable, Ownable, ERC20Permit, ERC20Votes, ERC20FlashMint {
+    constructor(address initialOwner)
+        ERC20("MyToken", "MTK")
+        Ownable(initialOwner)
+        ERC20Permit("MyToken")
+    {}
 
-    // owner -> spender -> allowance
-        // this enables an owner to give allowance to multiple addresses
-    mapping(address => mapping(address => uint256)) public allowance;
-
-    constructor(string memory _name, string memory _symbol) {
-        name = _name;
-        symbol = _symbol;
-        decimals = 18;
-
-        owner = msg.sender;
+    function pause() public onlyOwner {
+        _pause();
     }
 
-    function mint(address to, uint256 amount) public {
-        require(msg.sender == owner, "only owner can create tokens");
-        totalSupply += amount;
-        balanceOf[owner] += amount;
+    function unpause() public onlyOwner {
+        _unpause();
     }
 
-    function transfer(address to, uint256 amount) public returns (bool) {
-        return helperTransfer(msg.sender, to, amount);
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
     }
 
-    function approve(address spender, uint256 amount) public returns (bool) {
-        allowance[msg.sender][spender] = amount;
-
-        return true;
+    function clock() public view override returns (uint48) {
+        return uint48(block.timestamp);
     }
 
-    // just added
-    function transferFrom(address from, address to, uint256 amount) public returns (bool) {
-        if (msg.sender != from) {
-            require(allowance[from][msg.sender] >= amount, "not enough allowance");
-
-            allowance[from][msg.sender] -= amount;
-        }
-
-        return helperTransfer(from, to, amount);
+    // solhint-disable-next-line func-name-mixedcase
+    function CLOCK_MODE() public pure override returns (string memory) {
+        return "mode=timestamp";
     }
 
+    // The following functions are overrides required by Solidity.
 
-    // it's very important for this function to be internal!
-    function helperTransfer(address from, address   to, uint256 amount) internal returns (bool) {
-        require(balanceOf[from] >= amount, "not enough money");
-        require(to != address(0), "cannot send to address(0)");
-        balanceOf[from] -= amount;
-        balanceOf[to] += amount;
+    function _update(address from, address to, uint256 value)
+        internal
+        override(ERC20, ERC20Pausable, ERC20Votes)
+    {
+        super._update(from, to, value);
+    }
 
-        return true;
+    function nonces(address owner)
+        public
+        view
+        override(ERC20Permit, Nonces)
+        returns (uint256)
+    {
+        return super.nonces(owner);
     }
 }
