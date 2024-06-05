@@ -1,0 +1,75 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "source",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "callAdd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/weektwo/contracton contract.sol": "ExampleContract"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/weektwo/contracton contract.sol": {
+			"keccak256": "0xd62457e00cda49a4a7203a698f95f9d29552f3d031348adaa7e36e7996b87ead",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://85860c6d9b1f578dc4dddf4c50ba9675873444083032cadb0346411f7523a727",
+				"dweb:/ipfs/QmYKo9mFsUHn5hKpTKcbPPTyztbh2v765TdVVXsULrLGNW"
+			]
+		}
+	},
+	"version": 1
+}
